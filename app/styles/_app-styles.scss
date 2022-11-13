@@ -1,0 +1,68 @@
+@use '/app/styles/variables' as *;
+@use '/app/styles/mixins' as *;
+
+
+html {
+  --scroll-behavior: smooth !important;
+  scroll-behavior: smooth !important;
+}
+
+::selection {
+  background: aqua;
+}
+
+::-moz-selection {
+  background: aqua;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 400px;
+  color: $color;
+  @include adaptive-value('font-size', 20, 14, 0);
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+
+.container {
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+main {
+  flex: 1 1 auto;
+}
+
+section {
+  min-height: 600px;
+}
+
+h2 {
+  display: inline-block;
+  border-bottom: 5px solid #fff;
+  text-transform: uppercase;
+  @include adaptive-value('margin-bottom', 80, 20, 0);
+  @include adaptive-value('font-size', 34, 22, 0);
+  color: $color2;
+}
+
+a, span, p {
+  background-color: transparent;
+  color: $color;
+  @include adaptive-value('line-height', 28, 18, 0);
+}
+
+span, p {
+  transition: .2s ease-out;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}

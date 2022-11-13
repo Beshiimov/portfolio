@@ -1,0 +1,215 @@
+@use '/app/styles/mixins' as *;
+@use '/app/styles/variables' as *;
+
+
+.Hero {
+  height: 100%;
+  width: 100%;
+  background-color: $color2;
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  text-orientation: mixed;
+
+  &__body {
+    height: 100vh;
+    min-height: 600px;
+    padding: 40px 0;
+    @include adaptive-value('padding-top', 80, 50, 0);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .body__hello {
+      margin-top: -20vh;
+      width: 100%;
+      height: fit-content;
+      overflow: hidden;
+
+      h1 {
+        padding: 0 2px;
+        color: $color;
+        transition: .3s ease-out;
+        text-transform: uppercase;
+        mix-blend-mode: difference;
+        @include adaptive-value('font-size', 80, 50, 0);
+      }
+    }
+
+  }
+}
+
+.Me {
+  position: relative;
+  height: 100vh;
+  background-color: $color;
+
+  &__body {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    overflow: hidden;
+    color: $color;
+
+    .Me__text {
+      mix-blend-mode: difference;
+      margin-top: -70px;
+
+      h2 {
+        color: $color;
+      }
+
+      span, p {
+        width: 90%;
+        @include adaptive-value('letter-spacing', -.3, -2, 0);
+        margin-bottom: 10px;
+        padding: 10px 0;
+        border-bottom: 1px solid $color;
+      }
+    }
+
+  }
+
+
+  &__images {
+    padding: 0 10px;
+    border-radius: 12px;
+
+    img {
+      border-radius: 10px;
+      object-fit: cover;
+      @include adaptive-value('width', 600, 300, 0);
+      @include adaptive-value('height', 700, 400, 0);
+    }
+  }
+}
+
+.Skills {
+  background-color: $color;
+  @include adaptive-value('padding-top', 40, 20, 0);
+  @include adaptive-value('padding-bottom', 60, 20, 0);
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  h2 {
+    color: $color;
+  }
+
+  &__text {
+    padding: 40px 15px;
+    text-transform: uppercase;
+    mix-blend-mode: difference;
+    @include adaptive-value('margin-bottom', 30, 10, 0);
+  }
+
+  &__charts {
+    .chart {
+      p {
+        color: $color2;
+        @include adaptive-value('margin-top', 30, 15, 0);
+
+      }
+
+      .line {
+        height: 3px;
+        width: 100%;
+        background-color: rgba(110, 110, 110, 0.7);
+        border-radius: 5px;
+
+        .progress {
+          border-radius: 5px;
+          height: 3px;
+        }
+      }
+    }
+  }
+}
+
+.Projects {
+  @include adaptive-value('padding-top', 60, 25, 0);
+  @include adaptive-value('padding-bottom', 60, 25, 0);
+  mix-blend-mode: difference;
+  background-color: $color2;
+
+  h2 {
+    color: $color;
+  }
+
+  &__body {
+
+    .projectRow {
+
+      display: flex;
+      flex-wrap: wrap;
+
+      .project {
+        a {
+          img {
+            overflow: hidden;
+            transition: all .3s ease-in-out;
+            object-fit: cover;
+            background-position: center center;
+
+            &:hover {
+              transform: scale(1.05);
+            }
+          }
+        }
+
+        overflow: hidden;
+        width: 100%;
+        max-width: 900px;
+      }
+    }
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+
+@media (max-width: 1439px) {
+  .Me {
+    height: auto;
+    padding: 60px 0;
+  }
+  .Me__body {
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: flex-end;
+
+    .Me__text {
+      margin-top: 20px;
+    }
+
+    span, p {
+      width: 100%;
+    }
+
+    h2 {
+      margin-top: 40px;
+    }
+
+    .Me__images {
+      width: 100%;
+
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
