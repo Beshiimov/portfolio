@@ -100,7 +100,7 @@
   }
 
   &__text {
-    padding: 40px 15px;
+    padding: 40px 0;
     text-transform: uppercase;
     mix-blend-mode: difference;
     @include adaptive-value('margin-bottom', 30, 10, 0);

@@ -14,7 +14,7 @@
   border-bottom: 1px solid $color;
 
   .header__body {
-    @include adaptive-value('height', 60, 40, 0);
+    @include adaptive-value('height', 60, 80, 0);
     color: $color2;
     max-width: 1400px;
     padding: 0 5px;
@@ -31,7 +31,7 @@
 }
 
 .Navigation {
-  @include adaptive-value('width', 60, 40, 0);
+  width: 60px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -51,7 +51,6 @@
     white-space: -moz-pre-wrap;
     white-space: -o-pre-wrap;
     white-space: pre-wrap;
-    word-wrap: break-word;
   }
 }
 
@@ -64,7 +63,6 @@
   text-align: right;
 
   p {
-    opacity: .8;
     line-height: 20px;
   }
 }

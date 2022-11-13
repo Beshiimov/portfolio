@@ -20,7 +20,7 @@ body {
   flex-direction: column;
   min-height: 400px;
   color: $color;
-  @include adaptive-value('font-size', 20, 14, 0);
+  @include adaptive-value('font-size', 18, 26, 0);
 }
 
 body::-webkit-scrollbar {
@@ -47,14 +47,14 @@ h2 {
   border-bottom: 5px solid #fff;
   text-transform: uppercase;
   @include adaptive-value('margin-bottom', 80, 20, 0);
-  @include adaptive-value('font-size', 34, 22, 0);
+  @include adaptive-value('font-size', 34, 24, 0);
   color: $color2;
 }
 
 a, span, p {
   background-color: transparent;
   color: $color;
-  @include adaptive-value('line-height', 28, 18, 0);
+  @include adaptive-value('line-height', 28, 32, 0);
 }
 
 span, p {
