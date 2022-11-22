@@ -2,9 +2,10 @@
 import React, { FC } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import motion from '../../components/Framer-motion/Framer-motion'
 
 import perfumery from '/public/assets/images/Project-perfumery.jpg'
-import motion from '../../components/Framer-motion/Framer-motion'
+import moviee from '/public/assets/images/Project-moviee.jpg'
 import s from './page.module.scss'
 
 const Projects: FC = () => {
@@ -26,8 +27,13 @@ const Projects: FC = () => {
         </motion.h2>
         <div className={s.projectRow}>
           <div className={s.project}>
-            <Link href={'https://beshiimov.github.io/parfumeApp/#/home'}>
+            <Link href={'https://perfume-topaz.vercel.app'}>
               <Image src={perfumery} alt="My Project" placeholder="blur" />
+            </Link>
+          </div>
+          <div className={s.project}>
+            <Link href={'https://movie-website-puce.vercel.app/home'}>
+              <Image src={moviee} alt="My Project" placeholder="blur" />
             </Link>
           </div>
         </div>

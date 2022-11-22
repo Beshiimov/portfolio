@@ -62,7 +62,6 @@
 
       span, p {
         width: 90%;
-        @include adaptive-value('letter-spacing', -.3, -2, 0);
         margin-bottom: 10px;
         padding: 10px 0;
         border-bottom: 1px solid $color;
@@ -140,13 +139,15 @@
   }
 
   &__body {
-
     .projectRow {
-
       display: flex;
-      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
 
       .project {
+        overflow: hidden;
+        margin: 10px;
+
         a {
           img {
             overflow: hidden;
@@ -160,9 +161,6 @@
           }
         }
 
-        overflow: hidden;
-        width: 100%;
-        max-width: 900px;
       }
     }
   }
@@ -210,6 +208,13 @@
         width: 100%;
         object-fit: cover;
       }
+    }
+  }
+  .projectRow {
+    flex-direction: column;
+
+    .project {
+      width: 100%;
     }
   }
 }
