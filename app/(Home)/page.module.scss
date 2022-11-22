@@ -10,6 +10,31 @@
   animation: gradient 15s ease infinite;
   text-orientation: mixed;
 
+  a {
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    bottom: 5vh;
+    width: 60px;
+    height: 60px;
+    transform: translate(-50%);
+    z-index: 2;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    transition: 2s ease;
+
+    img {
+      width: 25px;
+      height: 25px;
+      animation: arrowDown 2.5s ease infinite;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      will-change: transform;
+    }
+  }
+
   &__body {
     height: 100vh;
     min-height: 600px;
@@ -67,7 +92,6 @@
         border-bottom: 1px solid $color;
       }
     }
-
   }
 
 
@@ -178,6 +202,14 @@
   }
 }
 
+@keyframes arrowDown {
+  0% {
+    top: 50%;
+  }
+  50% {
+    top: 60%;
+  }
+}
 
 @media (max-width: 1439px) {
   .Me {
@@ -218,3 +250,4 @@
     }
   }
 }
+

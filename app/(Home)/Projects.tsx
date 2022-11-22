@@ -10,7 +10,7 @@ import s from './page.module.scss'
 
 const Projects: FC = () => {
   const variants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 40 },
     enter: { opacity: 1, y: 0 },
   }
 
@@ -26,16 +26,30 @@ const Projects: FC = () => {
           My Projects
         </motion.h2>
         <div className={s.projectRow}>
-          <div className={s.project}>
+          <motion.div
+            className={s.project}
+            variants={variants}
+            initial="hidden"
+            whileInView="enter"
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+          >
             <Link href={'https://perfume-topaz.vercel.app'}>
               <Image src={perfumery} alt="My Project" placeholder="blur" />
             </Link>
-          </div>
-          <div className={s.project}>
+          </motion.div>
+          <motion.div
+            className={s.project}
+            variants={variants}
+            initial="hidden"
+            whileInView="enter"
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+          >
             <Link href={'https://movie-website-puce.vercel.app/home'}>
               <Image src={moviee} alt="My Project" placeholder="blur" />
             </Link>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
